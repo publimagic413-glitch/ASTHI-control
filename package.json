@@ -1,0 +1,19 @@
+{
+  "name": "asthi-control-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor remoto de autenticacion y control de licencias para Asthi Sender. No envia mensajes de WhatsApp.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

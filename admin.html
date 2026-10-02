@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asthi Control</title>
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+  <main class="wrap">
+    <section id="login" class="card">
+      <div class="brand">ASTHI CONTROL</div>
+      <p class="muted">Panel administrativo de Asthi Sender</p>
+      <label>Correo administrador<input id="email" type="email" autocomplete="username"></label>
+      <label>Clave<input id="password" type="password" autocomplete="current-password"></label>
+      <button id="loginBtn">INGRESAR</button>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section id="panel" hidden>
+      <header class="topbar">
+        <div><div class="brand">ASTHI CONTROL</div><div class="muted">Usuarios y licencias</div></div>
+        <button id="logoutBtn" class="secondary">Cerrar sesión</button>
+      </header>
+
+      <section class="stats">
+        <div class="stat"><span>Usuarios</span><strong id="totalUsers">0</strong></div>
+        <div class="stat"><span>Activos</span><strong id="activeUsers">0</strong></div>
+        <div class="stat"><span>Inactivos</span><strong id="inactiveUsers">0</strong></div>
+        <div class="stat"><span>Instalaciones</span><strong id="installations">0</strong></div>
+      </section>
+
+      <section class="card">
+        <h2>Claves disponibles</h2>
+        <p class="muted">Las claves nunca se muestran en pantalla. Solo se puede reemplazar una clave escribiendo una nueva.</p>
+        <div id="keys" class="keys"></div>
+      </section>
+
+      <section class="card">
+        <h2>Crear usuario</h2>
+        <div class="grid">
+          <label>Nombre<input id="firstName"></label>
+          <label>Primer apellido<input id="firstSurname"></label>
+          <label>Clave asignada<select id="keySlot"></select></label>
+        </div>
+        <label class="check"><input id="userActive" type="checkbox" checked> Usuario activo</label>
+        <button id="createUserBtn">Crear usuario</button>
+        <p id="userMsg" class="msg"></p>
+      </section>
+
+      <section class="card">
+        <h2>Usuarios</h2>
+        <div class="tableWrap"><table><thead><tr><th>Usuario</th><th>Clave</th><th>Estado</th><th>Último acceso</th><th>Acciones</th></tr></thead><tbody id="users"></tbody></table></div>
+      </section>
+    </section>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>
